@@ -1,0 +1,87 @@
+'''
+You are given a string  and width . 
+Your task is to wrap the string into a paragraph of width .
+
+Input Format
+
+The first line contains a string, . 
+The second line contains the width, .
+
+Output Format: Print the text wrapped paragraph.
+
+Sample Input 0
+
+ABCDEFGHIJKLIMNOQRSTUVWXYZ
+4
+Sample Output 0
+
+ABCD
+EFGH
+IJKL
+IMNO
+QRST
+UVWX
+YZ
+
+Solution
+'''
+
+import textwrap
+
+def wrap(string, max_width):
+    string1=""
+    for i in range(0, len(string), max_width):
+        string1=string1+string[i:i+max_width]
+        return string1
+if __name__ == '__main__':
+    string, max_width = raw_input(), int(raw_input())
+    result = wrap(string, max_width)
+    print result
+
+'''
+Problem 2:
+
+You are given a string. Split the string on a " " (space) delimiter and join using a - hyphen.
+
+Example:
+Input: this is a string
+Output: this-is-a-string
+
+Solution:
+'''
+def split_and_join(line):
+    str1=""
+    line=line.split(" ")
+    line = "-".join(line)
+    return line
+    """
+    for i in range(len(line)):
+        str1= str1+line[i]+"-"
+    str1=str1.trim("-")
+    return str
+ """
+ 
+if __name__ == '__main__':
+    line = raw_input()
+    result = split_and_join(line)
+    print result
+
+'''
+Problem 3:
+
+Solution:
+'''
+
+def mutate_string(string, position, character):
+    list1=list(string)
+    list1[position]=character
+    s_new=''.join(list1)
+    return s_new
+
+if __name__ == '__main__':
+    s = input()
+    i, c = input().split()
+    s_new = mutate_string(s, int(i), c)
+    print(s_new)
+
+
